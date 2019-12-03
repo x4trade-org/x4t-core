@@ -1,4 +1,4 @@
-# BitShares Libraries
+# X4Trade Libraries
 
 The libraries are the core of the project and defines everything where applications can build on top.
 

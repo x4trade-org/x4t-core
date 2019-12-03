@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 BitShares Blockchain Foundation, and contributors.
+ * Copyright (c) 2019 X4Trade Blockchain Foundation, and contributors.
  *
  * The MIT License
  *

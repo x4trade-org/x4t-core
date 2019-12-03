@@ -1,4 +1,4 @@
-BitShares Core
+X4T Core
 ==============
 
 [Build Status](https://travis-ci.org/bitshares/bitshares-core/branches):
