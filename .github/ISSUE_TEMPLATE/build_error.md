@@ -1,6 +1,6 @@
 ---
 name: Build Error
-about: Create a detailed report about an error encountered during the X4Trade Core build process.
+about: Create a detailed report about an error encountered during the X4trade Core build process.
 
 ---
 

@@ -894,23 +894,23 @@ class wallet_api
        */
       bool import_key(string account_name_or_id, string wif_key);
 
-      /** Imports accounts from a X4Trade 0.x wallet file.
+      /** Imports accounts from a X4trade 0.x wallet file.
        * Current wallet file must be unlocked to perform the import.
        *
-       * @param filename the X4Trade 0.x wallet file to import
-       * @param password the password to encrypt the X4Trade 0.x wallet file
+       * @param filename the X4trade 0.x wallet file to import
+       * @param password the password to encrypt the X4trade 0.x wallet file
        * @returns a map containing the accounts found and whether imported
        */
       map<string, bool> import_accounts( string filename, string password );
 
-      /** Imports from a X4Trade 0.x wallet file, find keys that were bound to a given account name on the
-       * X4Trade 0.x chain, rebind them to an account name on the 2.0 chain.
+      /** Imports from a X4trade 0.x wallet file, find keys that were bound to a given account name on the
+       * X4trade 0.x chain, rebind them to an account name on the 2.0 chain.
        * Current wallet file must be unlocked to perform the import.
        *
-       * @param filename the X4Trade 0.x wallet file to import
-       * @param password the password to encrypt the X4Trade 0.x wallet file
-       * @param src_account_name name of the account on X4Trade 0.x chain
-       * @param dest_account_name name of the account on X4Trade 2.0 chain,
+       * @param filename the X4trade 0.x wallet file to import
+       * @param password the password to encrypt the X4trade 0.x wallet file
+       * @param src_account_name name of the account on X4trade 0.x chain
+       * @param dest_account_name name of the account on X4trade 2.0 chain,
        *                          can be same or different to \c src_account_name
        * @returns whether the import has succeeded
        */
