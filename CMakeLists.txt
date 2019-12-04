@@ -1,6 +1,11 @@
 # Defines X4trade library target.
+<<<<<<< HEAD
+project( X4trade )
+cmake_minimum_required( VERSION 2.8.12 )
+=======
 cmake_minimum_required( VERSION 3.2 FATAL_ERROR )
 project( X4trade LANGUAGES CXX C)
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
 
 set( BLOCKCHAIN_NAME "X4trade" )
 
@@ -32,6 +37,10 @@ endif()
 
 list( APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules" )
 
+<<<<<<< HEAD
+set(CMAKE_EXPORT_COMPILE_COMMANDS "ON")
+set(GRAPHENE_EGENESIS_JSON "${CMAKE_CURRENT_SOURCE_DIR}/libraries/egenesis/genesis.json" )
+=======
 include(CheckCCompilerFlag)
 include(Utils)
 
@@ -112,6 +121,7 @@ endif()
 # position independent executetable (PIE)
 # position independent code (PIC)
 add_definitions (-fPIC)
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS "ON")
 set( GRAPHENE_EGENESIS_JSON "${CMAKE_CURRENT_SOURCE_DIR}/libraries/egenesis/genesis.json"
@@ -207,11 +217,19 @@ else( WIN32 ) # Apple AND Linux
     if( APPLE )
         # Apple Specific Options Here
         message( STATUS "Configuring X4trade on OS X" )
+<<<<<<< HEAD
+        set( CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++11 -stdlib=libc++ -Wall" )
+    else( APPLE )
+        # Linux Specific Options Here
+        message( STATUS "Configuring X4trade on Linux" )
+        set( CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++11 -Wall" )
+=======
         set( CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -stdlib=libc++ -Wall" )
     else( APPLE )
         # Linux Specific Options Here
         message( STATUS "Configuring X4trade on Linux" )
         set( CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -Wall" )
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
         if(USE_PROFILER)
             set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pg" )
         endif( USE_PROFILER )

@@ -225,7 +225,7 @@ bool database::_push_block(const signed_block& new_block)
  */
 processed_transaction database::push_transaction( const precomputable_transaction& trx, uint32_t skip )
 { try {
-   // see https://github.com/bitshares/bitshares-core/issues/1573
+   // see https://github.com/x4trade-org/x4trade-core/issues/1573
    FC_ASSERT( fc::raw::pack_size( trx ) < (1024 * 1024), "Transaction exceeds maximum transaction size." );
    processed_transaction result;
    detail::with_skip_flags( *this, skip, [&]()

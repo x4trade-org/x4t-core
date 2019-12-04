@@ -124,7 +124,7 @@ BOOST_AUTO_TEST_CASE( get_potential_signatures_owner_and_active )
 }
 
 /// Testing get_potential_signatures and get_required_signatures for non-immediate owner authority issue.
-/// https://github.com/bitshares/bitshares-core/issues/584
+/// https://github.com/x4trade-org/x4trade-core/issues/584
 BOOST_AUTO_TEST_CASE( get_signatures_non_immediate_owner )
 {
    try {
@@ -188,10 +188,10 @@ BOOST_AUTO_TEST_CASE( get_signatures_non_immediate_owner )
       BOOST_CHECK( pub_keys.find( pub_key_active ) != pub_keys.end() );
       BOOST_CHECK( pub_keys.find( pub_key_owner ) != pub_keys.end() );
       BOOST_CHECK( pub_keys.find( a_pub_key_active ) != pub_keys.end() );
-      // doesn't work due to https://github.com/bitshares/bitshares-core/issues/584
+      // doesn't work due to https://github.com/x4trade-org/x4trade-core/issues/584
       BOOST_CHECK( pub_keys.find( a_pub_key_owner ) == pub_keys.end() );
       BOOST_CHECK( pub_keys.find( o_pub_key_active ) != pub_keys.end() );
-      // doesn't work due to https://github.com/bitshares/bitshares-core/issues/584
+      // doesn't work due to https://github.com/x4trade-org/x4trade-core/issues/584
       BOOST_CHECK( pub_keys.find( o_pub_key_owner ) == pub_keys.end() );
 
       // get required signatures
@@ -216,7 +216,7 @@ BOOST_AUTO_TEST_CASE( get_signatures_non_immediate_owner )
       // owner authorities should be ok
       BOOST_CHECK( pub_keys.find( pub_key_owner ) != pub_keys.end() );
       BOOST_CHECK( pub_keys.find( o_pub_key_active ) != pub_keys.end() );
-      // doesn't work due to https://github.com/bitshares/bitshares-core/issues/584
+      // doesn't work due to https://github.com/x4trade-org/x4trade-core/issues/584
       BOOST_CHECK( pub_keys.find( o_pub_key_owner ) == pub_keys.end() );
 
       // get required signatures

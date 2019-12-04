@@ -97,7 +97,7 @@ node_property_object& database::node_properties()
 
 uint32_t database::last_non_undoable_block_num() const
 {
-   //see https://github.com/bitshares/bitshares-core/issues/377
+   //see https://github.com/x4trade-org/x4trade-core/issues/377
    /*
    There is a case when a value of undo_db.size() is greater then head_block_num(),
    and as result we get a wrong value for last_non_undoable_block_num.

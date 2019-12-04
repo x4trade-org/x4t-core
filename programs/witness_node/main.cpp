@@ -180,7 +180,11 @@ int main(int argc, char** argv) {
          exit_promise->set_value(signal);
       }, SIGTERM);
 
+<<<<<<< HEAD
+      ilog("Started X4Trade node on a chain with ${h} blocks.", ("h", node->chain_database()->head_block_num()));
+=======
       ilog("Started X4trade node on a chain with ${h} blocks.", ("h", node->chain_database()->head_block_num()));
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
       ilog("Chain ID is ${id}", ("id", node->chain_database()->get_chain_id()) );
 
       int signal = exit_promise->wait();

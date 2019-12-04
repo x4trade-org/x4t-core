@@ -182,7 +182,11 @@ void database::pay_workers( share_type& budget )
       // Note: if there is a good chance that passed_time_count == day_count,
       //       for better performance, can avoid the 128 bit calculation by adding a check.
       //       Since it's not the case on X4trade mainnet, we're not using a check here.
+<<<<<<< HEAD
+      fc::uint128 pay(requested_pay.value);
+=======
       fc::uint128_t pay = requested_pay.value;
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
       pay *= passed_time_count;
       pay /= day_count;
       requested_pay = static_cast<uint64_t>(pay);
@@ -992,12 +996,12 @@ void update_median_feeds(database& db)
  * Prior to hardfork 868, switching a bitasset's shorting asset would not reset its
  * feeds. This method will run at the hardfork time, and erase (or nullify) feeds
  * that have incorrect backing assets.
- * https://github.com/bitshares/bitshares-core/issues/868
+ * https://github.com/x4trade-org/x4trade-core/issues/868
  *
  * Prior to hardfork 890, changing a bitasset's feed expiration time would not
  * trigger a median feed update. This method will run at the hardfork time, and
  * correct all median feed data.
- * https://github.com/bitshares/bitshares-core/issues/890
+ * https://github.com/x4trade-org/x4trade-core/issues/890
  *
  * @param db the database
  * @param skip_check_call_orders true if check_call_orders() should not be called
@@ -1019,7 +1023,7 @@ void process_hf_868_890( database& db, bool skip_check_call_orders )
       // Incorrect witness & committee feeds can simply be removed.
       // For non-witness-fed and non-committee-fed assets, set incorrect
       // feeds to price(), since we can't simply remove them. For more information:
-      // https://github.com/bitshares/bitshares-core/pull/832#issuecomment-384112633
+      // https://github.com/x4trade-org/x4trade-core/pull/832#issuecomment-384112633
       bool is_witness_or_committee_fed = false;
       if ( current_asset.options.flags & ( witness_fed_asset | committee_fed_asset ) )
          is_witness_or_committee_fed = true;
@@ -1066,7 +1070,7 @@ void process_hf_868_890( database& db, bool skip_check_call_orders )
                ("asset_sym", current_asset.symbol)("asset_id", current_asset.id) );
       }
 
-      // always update the median feed due to https://github.com/bitshares/bitshares-core/issues/890
+      // always update the median feed due to https://github.com/x4trade-org/x4trade-core/issues/890
       db.modify( bitasset_data, [head_time,next_maint_time]( asset_bitasset_data_object &obj ) {
          obj.update_median_feeds( head_time, next_maint_time );
       });
@@ -1103,7 +1107,7 @@ void process_hf_868_890( database& db, bool skip_check_call_orders )
  * Prior to hardfork 935, `check_call_orders` may be unintendedly skipped when
  * median price feed has changed. This method will run at the hardfork time, and
  * call `check_call_orders` for all markets.
- * https://github.com/bitshares/bitshares-core/issues/935
+ * https://github.com/x4trade-org/x4trade-core/issues/935
  *
  * @param db the database
  */

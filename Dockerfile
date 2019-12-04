@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+FROM phusion/baseimage:0.10.1
+MAINTAINER The x4trade decentralized organisation
+=======
 FROM phusion/baseimage:0.11
 MAINTAINER The bitshares decentralized organisation
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
 
 ENV LANG=en_US.UTF-8
 RUN \
@@ -32,8 +37,8 @@ RUN \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ADD . /bitshares-core
-WORKDIR /bitshares-core
+ADD . /x4trade-core
+WORKDIR /x4trade-core
 
 # Compile
 RUN \
@@ -53,19 +58,19 @@ RUN \
     install -s programs/witness_node/witness_node programs/genesis_util/get_dev_key programs/cli_wallet/cli_wallet /usr/local/bin && \
     #
     # Obtain version
-    mkdir /etc/bitshares && \
-    git rev-parse --short HEAD > /etc/bitshares/version && \
+    mkdir /etc/x4trade && \
+    git rev-parse --short HEAD > /etc/x4trade/version && \
     cd / && \
-    rm -rf /bitshares-core
+    rm -rf /x4trade-core
 
 # Home directory $HOME
 WORKDIR /
-RUN useradd -s /bin/bash -m -d /var/lib/bitshares bitshares
-ENV HOME /var/lib/bitshares
-RUN chown bitshares:bitshares -R /var/lib/bitshares
+RUN useradd -s /bin/bash -m -d /var/lib/x4trade x4trade
+ENV HOME /var/lib/x4trade
+RUN chown x4trade:x4trade -R /var/lib/x4trade
 
 # Volume
-VOLUME ["/var/lib/bitshares", "/etc/bitshares"]
+VOLUME ["/var/lib/x4trade", "/etc/x4trade"]
 
 # rpc service:
 EXPOSE 8090
@@ -73,12 +78,12 @@ EXPOSE 8090
 EXPOSE 1776
 
 # default exec/config files
-ADD docker/default_config.ini /etc/bitshares/config.ini
-ADD docker/bitsharesentry.sh /usr/local/bin/bitsharesentry.sh
-RUN chmod a+x /usr/local/bin/bitsharesentry.sh
+ADD docker/default_config.ini /etc/x4trade/config.ini
+ADD docker/x4tradeentry.sh /usr/local/bin/x4tradeentry.sh
+RUN chmod a+x /usr/local/bin/x4tradeentry.sh
 
 # Make Docker send SIGINT instead of SIGTERM to the daemon
 STOPSIGNAL SIGINT
 
 # default execute entry
-CMD ["/usr/local/bin/bitsharesentry.sh"]
+CMD ["/usr/local/bin/x4tradeentry.sh"]

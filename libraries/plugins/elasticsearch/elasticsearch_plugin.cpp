@@ -55,7 +55,7 @@ class elasticsearch_plugin_impl
       uint32_t _elasticsearch_bulk_sync = 100;
       bool _elasticsearch_visitor = false;
       std::string _elasticsearch_basic_auth = "";
-      std::string _elasticsearch_index_prefix = "bitshares-";
+      std::string _elasticsearch_index_prefix = "x4trade-";
       bool _elasticsearch_operation_object = false;
       uint32_t _elasticsearch_start_es_after_block = 0;
       bool _elasticsearch_operation_string = true;
@@ -428,6 +428,16 @@ void elasticsearch_plugin::plugin_set_program_options(
    )
 {
    cli.add_options()
+<<<<<<< HEAD
+         ("elasticsearch-node-url", boost::program_options::value<std::string>(), "Elastic Search database node url(http://localhost:9200/)")
+         ("elasticsearch-bulk-replay", boost::program_options::value<uint32_t>(), "Number of bulk documents to index on replay(10000)")
+         ("elasticsearch-bulk-sync", boost::program_options::value<uint32_t>(), "Number of bulk documents to index on a syncronied chain(100)")
+         ("elasticsearch-visitor", boost::program_options::value<bool>(), "Use visitor to index additional data(slows down the replay(false))")
+         ("elasticsearch-basic-auth", boost::program_options::value<std::string>(), "Pass basic auth to elasticsearch database('')")
+         ("elasticsearch-index-prefix", boost::program_options::value<std::string>(), "Add a prefix to the index(x4trade-)")
+         ("elasticsearch-operation-object", boost::program_options::value<bool>(), "Save operation as object(false)")
+         ("elasticsearch-start-es-after-block", boost::program_options::value<uint32_t>(), "Start doing ES job after block(0)")
+=======
          ("elasticsearch-node-url", boost::program_options::value<std::string>(),
                "Elastic Search database node url(http://localhost:9200/)")
          ("elasticsearch-bulk-replay", boost::program_options::value<uint32_t>(),
@@ -448,6 +458,7 @@ void elasticsearch_plugin::plugin_set_program_options(
                "Save operation as string. Needed to serve history api calls(true)")
          ("elasticsearch-mode", boost::program_options::value<uint16_t>(),
                "Mode of operation: only_save(0), only_query(1), all(2) - Default: 0")
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
          ;
    cfg.add(cli);
 }

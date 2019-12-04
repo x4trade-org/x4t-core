@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+X4trade Core
+=======
 X4T Core
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
 ==============
 
 [Build Status](https://travis-ci.org/bitshares/bitshares-core/branches):
@@ -15,19 +19,21 @@ X4T Core
 * [FAQ](#faq)
 * [License](#license)
 
+<<<<<<< HEAD
+X4trade Core is the X4trade blockchain implementation and command-line interface.
+The web wallet is [X4trade UI](https://github.com/bitshares/bitshares-ui).
+=======
 BitShares Core is the BitShares blockchain implementation and command-line interface.
 The web browser based wallet is [BitShares UI](https://github.com/bitshares/bitshares-ui).
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
 
-Visit [BitShares.org](https://bitshares.org/) to learn about BitShares and join the community at [BitSharesTalk.org](https://bitsharestalk.org/).
+Visit [x4trade.org](https://x4trade.org/) to learn about X4trade and join the community at [Telegram](https://t.me/x4trade/).
 
-Information for developers can be found in the [Bitshares Developer Portal](https://dev.bitshares.works/). Users interested in how bitshares works can go to the [BitShares Documentation](https://how.bitshares.works/) site.
-
-For security issues and bug bounty program please visit [Hack the DEX](https://hackthedex.io).
 
 Getting Started
 ---------------
 Build instructions and additional documentation are available in the
-[wiki](https://github.com/bitshares/bitshares-core/wiki).
+[wiki](https://github.com/x4trade-org/x4trade-core/wiki).
 
 We recommend building on Ubuntu 16.04 LTS (64-bit) 
 
@@ -38,8 +44,8 @@ We recommend building on Ubuntu 16.04 LTS (64-bit)
 
 **Build Script:**
 
-    git clone https://github.com/bitshares/bitshares-core.git
-    cd bitshares-core
+    git clone https://github.com/x4trade-org/x4trade-core.git
+    cd x4trade-core
     git checkout master # may substitute "master" with current release tag
     git submodule update --init --recursive
     cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .
@@ -47,7 +53,7 @@ We recommend building on Ubuntu 16.04 LTS (64-bit)
 
 **Upgrade Script:** (prepend to the Build Script above if you built a prior release):
 
-    git remote set-url origin https://github.com/bitshares/bitshares-core.git
+    git remote set-url origin https://github.com/x4trade-org/x4trade-core.git
     git checkout master
     git remote set-head origin --auto
     git pull
@@ -57,15 +63,15 @@ We recommend building on Ubuntu 16.04 LTS (64-bit)
 
 **NOTE:** Versions of [Boost](http://www.boost.org/) 1.58 through 1.69 are supported. Newer versions may work, but
 have not been tested. If your system came pre-installed with a version of Boost that you do not wish to use, you may
-manually build your preferred version and use it with BitShares by specifying it on the CMake command line.
+manually build your preferred version and use it with X4trade by specifying it on the CMake command line.
 
 Example: ``cmake -DBOOST_ROOT=/path/to/boost .``
 
-**NOTE:** BitShares requires a 64-bit operating system to build, and will not build on a 32-bit OS.
+**NOTE:** X4trade requires a 64-bit operating system to build, and will not build on a 32-bit OS.
 
-**NOTE:** BitShares now supports Ubuntu 18.04 LTS
+**NOTE:** X4trade now supports Ubuntu 18.04 LTS
 
-**NOTE:** BitShares now supports OpenSSL 1.1.0
+**NOTE:** X4trade now supports OpenSSL 1.1.0
 
 **After Building**, the `witness_node` can be launched with:
 
@@ -77,7 +83,7 @@ the blockchain. After syncing, you can exit the node using Ctrl+C and setup the 
 
     rpc-endpoint = 127.0.0.1:8090
 
-**IMPORTANT:** By default the witness node will start in reduced memory mode by using some of the commands detailed in [Memory reduction for nodes](https://github.com/bitshares/bitshares-core/wiki/Memory-reduction-for-nodes).
+**IMPORTANT:** By default the witness node will start in reduced memory mode by using some of the commands detailed in [Memory reduction for nodes](https://github.com/x4trade-org/x4trade-core/wiki/Memory-reduction-for-nodes).
 In order to run a full node with all the account history you need to remove `partial-operations` and `max-ops-per-account` from your config file. Please note that currently(2018-10-17) a full node will need more than 160GB of RAM to operate and required memory is growing fast. Consider the following table as minimal requirements before running a node:
 
 | Default | Full | Minimal  | ElasticSearch 
@@ -109,17 +115,17 @@ To import your initial balance:
 If you send private keys over this connection, `rpc-endpoint` should be bound to localhost for security.
 
 Use `help` to see all available wallet commands. Source definition and listing of all commands is available
-[here](https://github.com/bitshares/bitshares-core/blob/master/libraries/wallet/include/graphene/wallet/wallet.hpp).
+[here](https://github.com/x4trade-org/x4trade-core/blob/master/libraries/wallet/include/graphene/wallet/wallet.hpp).
 
 Support
 -------
 Technical support is available in the [BitSharesTalk technical support subforum](https://bitsharestalk.org/index.php?board=45.0).
 
-BitShares Core bugs can be reported directly to the [issue tracker](https://github.com/bitshares/bitshares-core/issues).
+X4trade Core bugs can be reported directly to the [issue tracker](https://github.com/x4trade-org/x4trade-core/issues).
 
-BitShares UI bugs should be reported to the [UI issue tracker](https://github.com/bitshares/bitshares-ui/issues)
+X4trade UI bugs should be reported to the [UI issue tracker](https://github.com/bitshares/bitshares-ui/issues)
 
-Up to date online Doxygen documentation can be found at [Doxygen](https://bitshares.org/doxygen/hierarchy.html)
+Up to date online Doxygen documentation can be found at [Doxygen](https://x4trade.org/doxygen/hierarchy.html)
 
 Using the API
 -------------
@@ -265,5 +271,5 @@ FAQ
  
 License
 -------
-BitShares Core is under the MIT license. See [LICENSE](https://github.com/bitshares/bitshares-core/blob/master/LICENSE.txt)
+X4trade Core is under the MIT license. See [LICENSE](https://github.com/x4trade-org/x4trade-core/blob/master/LICENSE.txt)
 for more information.

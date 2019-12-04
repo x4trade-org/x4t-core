@@ -1360,7 +1360,7 @@ BOOST_FIXTURE_TEST_CASE( nonminimal_sig_test, database_fixture )
 }
 
 /*
- * Active vs Owner https://github.com/bitshares/bitshares-core/issues/584
+ * Active vs Owner https://github.com/x4trade-org/x4trade-core/issues/584
  *
  * All weights and all thresholds are 1, so every single key should be able to sign if within max_depth
  *
@@ -1489,7 +1489,7 @@ BOOST_FIXTURE_TEST_CASE( parent_owner_test, database_fixture )
       tx.operations.push_back( op );
       set_expiration( db, tx );
 
-      // https://github.com/bitshares/bitshares-core/issues/584
+      // https://github.com/x4trade-org/x4trade-core/issues/584
       // If not allow non-immediate owner to authorize
       BOOST_CHECK( chk( tx, false, { alice_owner_pub }, { } ) );
       BOOST_CHECK( chk( tx, false, { alice_active_pub }, { alice_active_pub } ) );
@@ -1858,6 +1858,10 @@ BOOST_FIXTURE_TEST_CASE( parent_owner_test, database_fixture )
    }
 }
 
+<<<<<<< HEAD
+/// This test case reproduces https://github.com/x4trade-org/x4trade-core/issues/944
+///                       and https://github.com/x4trade-org/x4trade-core/issues/580
+=======
 BOOST_FIXTURE_TEST_CASE( owner_delegation_test, database_fixture )
 { try {
    ACTORS( (alice)(bob) );
@@ -1898,6 +1902,7 @@ BOOST_FIXTURE_TEST_CASE( owner_delegation_test, database_fixture )
 
 /// This test case reproduces https://github.com/bitshares/bitshares-core/issues/944
 ///                       and https://github.com/bitshares/bitshares-core/issues/580
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
 BOOST_FIXTURE_TEST_CASE( missing_owner_auth_test, database_fixture )
 {
    try
@@ -1969,7 +1974,7 @@ BOOST_FIXTURE_TEST_CASE( missing_owner_auth_test, database_fixture )
       tx.verify_authority( db.get_chain_id(), get_active, get_owner, true );
 
       // signed with both alice's owner key and active key,
-      // it does not throw due to https://github.com/bitshares/bitshares-core/issues/580
+      // it does not throw due to https://github.com/x4trade-org/x4trade-core/issues/580
       sign( tx, alice_active_key );
       tx.verify_authority( db.get_chain_id(), get_active, get_owner, false );
       tx.verify_authority( db.get_chain_id(), get_active, get_owner, true );

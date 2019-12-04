@@ -23,7 +23,35 @@
  */
 #pragma once
 
+<<<<<<< HEAD
+#define GRAPHENE_SYMBOL "X4T"
+#define GRAPHENE_ADDRESS_PREFIX "X4T"
+
+#define GRAPHENE_MIN_ACCOUNT_NAME_LENGTH 1
+#define GRAPHENE_MAX_ACCOUNT_NAME_LENGTH 63
+
+#define GRAPHENE_MIN_ASSET_SYMBOL_LENGTH 3
+#define GRAPHENE_MAX_ASSET_SYMBOL_LENGTH 16
+
+#define GRAPHENE_MAX_SHARE_SUPPLY int64_t(1000000000000000ll)
+#define GRAPHENE_MAX_SIG_CHECK_DEPTH 2
+/**
+ * Don't allow the committee_members to publish a limit that would
+ * make the network unable to operate.
+ */
+#define GRAPHENE_MIN_TRANSACTION_SIZE_LIMIT 1024
+#define GRAPHENE_MIN_BLOCK_INTERVAL   1 /* seconds */
+#define GRAPHENE_MAX_BLOCK_INTERVAL  30 /* seconds */
+
+#define GRAPHENE_DEFAULT_BLOCK_INTERVAL  5 /* seconds */
+#define GRAPHENE_DEFAULT_MAX_TRANSACTION_SIZE 2048
+#define GRAPHENE_DEFAULT_MAX_BLOCK_SIZE  (2*1000*1000) /* < 2 MiB (less than MAX_MESSAGE_SIZE in graphene/net/config.hpp) */
+#define GRAPHENE_DEFAULT_MAX_TIME_UNTIL_EXPIRATION (60*60*24) // seconds,  aka: 1 day
+#define GRAPHENE_DEFAULT_MAINTENANCE_INTERVAL  (60*60*24) // seconds, aka: 1 day
+#define GRAPHENE_DEFAULT_MAINTENANCE_SKIP_SLOTS 3  // number of slots to skip for maintenance interval
+=======
 #include <graphene/protocol/config.hpp>
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
 
 #define GRAPHENE_MIN_UNDO_HISTORY 10
 #define GRAPHENE_MAX_UNDO_HISTORY 10000

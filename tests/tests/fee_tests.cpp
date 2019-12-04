@@ -274,6 +274,11 @@ BOOST_AUTO_TEST_CASE(asset_claim_pool_test)
 
         };
 
+<<<<<<< HEAD
+        const asset_object& core_asset = asset_id_type()(db);
+
+=======
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
         // deposit 100 X4T to the fee pool of ALICEUSD asset
         fund_fee_pool( alice_id(db), aliceusd_id(db), _core(100).amount );
 

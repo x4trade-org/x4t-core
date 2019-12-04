@@ -1,6 +1,6 @@
 *.a
 *.sw*
-
+*.vscode
 *.cmake
 CMakeCache.txt
 CMakeFiles
@@ -8,10 +8,8 @@ Makefile
 compile_commands.json
 moc_*
 *.moc
-
-genesis.json
 hardfork.hpp
-
+*.DS_Store
 libraries/utilities/git_revision.cpp
 
 libraries/wallet/Doxyfile
@@ -21,12 +19,22 @@ libraries/wallet/doxygen
 programs/cli_wallet/cli_wallet
 programs/js_operation_serializer/js_operation_serializer
 programs/witness_node/witness_node
+programs/delayed_node/delayed_node
+programs/build_helpers/member_enumerator
+programs/build_helpers/cat-parts
+programs/network_mapper/network_mapper
+programs/size_checker/size_checker
+libraries/egenesis/embed_genesis
+programs/genesis_util/genesis_update
 
 tests/app_test
 tests/chain_bench
 tests/chain_test
 tests/intense_test
 tests/performance_test
+tests/cli_test
+tests/es_test
+tests/generate_empty_blocks/generate_empty_blocks
 
 doxygen
 

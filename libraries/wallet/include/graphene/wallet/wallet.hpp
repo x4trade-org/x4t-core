@@ -813,9 +813,15 @@ class wallet_api
        */
       bool    load_wallet_file(string wallet_filename = "");
 
+<<<<<<< HEAD
+      /** Quitting from X4trade wallet.
+       * 
+       * The current wallet will be closed.
+=======
       /** Quit from the wallet.
        *
        * The current wallet will be closed and saved.
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
        */
       void    quit();
 
@@ -1225,7 +1231,11 @@ class wallet_api
 
       /** Place a limit order attempting to sell one asset for another.
        *
+<<<<<<< HEAD
+       * Buying and selling are the same operation on Graphene; if you want to buy X4T 
+=======
        * Buying and selling are the same operation on Graphene; if you want to buy X4T
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
        * with USD, you should sell USD for X4T.
        *
        * The blockchain will attempt to sell the \c symbol_to_sell for as

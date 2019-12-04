@@ -117,7 +117,11 @@ namespace graphene { namespace app { namespace detail {
 
 void application_impl::reset_p2p_node(const fc::path& data_dir)
 { try {
+<<<<<<< HEAD
+   _p2p_network = std::make_shared<net::node>("X4Trade Reference Implementation");
+=======
    _p2p_network = std::make_shared<net::node>("X4trade Reference Implementation");
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
 
    _p2p_network->load_configuration(data_dir / "p2p");
    _p2p_network->set_node_delegate(this);
@@ -163,9 +167,19 @@ void application_impl::reset_p2p_node(const fc::path& data_dir)
    }
    else
    {
-      // https://bitsharestalk.org/index.php/topic,23715.0.html
+      // x4trade seednodes
       vector<string> seeds = {
+<<<<<<< HEAD
+         "node-tokyo.x4trade.org:11010",
+         "node-tokyo.x4trade.org:11015",
+         "ca-mtl-node.x4trade.org:11011",
+         "node-asia-east.x4trade.org:11015",
+         "node-euro-west.x4trade.org:11010",
+
+         
+=======
          #include "../egenesis/seed-nodes.txt"
+>>>>>>> e3e2ceed594585572f7566195e831c84456f5f94
       };
       for( const string& endpoint_string : seeds )
       {
